@@ -9061,23 +9061,43 @@
     <packageHasNamedElement>
       <useCase
         Id="28bf5f34-9aee-45b6-ad5c-732810dbc1ad"
-        name="UseCase1"
+        name="Login"
         isAbstract="false"
-        isLeaf="false" />
+        isLeaf="false">
+        <additions>
+          <include
+            Id="34a5a6d9-49e8-4b5a-8709-8a456d3a5733">
+            <useCaseMoniker
+              Id="bf616924-042c-41f4-8bfe-7481879039b5"
+              LastKnownName="Register"
+              LastKnownLocation="BugTrackerModeling.uml" />
+          </include>
+        </additions>
+      </useCase>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <useCase
         Id="bf616924-042c-41f4-8bfe-7481879039b5"
-        name="UseCase2"
+        name="Register"
         isAbstract="false"
         isLeaf="false" />
     </packageHasNamedElement>
     <packageHasNamedElement>
       <useCase
         Id="7032d763-7984-4cc6-aa2c-58d504771a48"
-        name="UseCase3"
+        name="Admin Login"
         isAbstract="false"
-        isLeaf="false" />
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="598c8b9a-bb70-4f16-aa84-17a62d5ae814">
+            <useCaseMoniker
+              Id="28bf5f34-9aee-45b6-ad5c-732810dbc1ad"
+              LastKnownName="Login"
+              LastKnownLocation="BugTrackerModeling.uml" />
+          </extend>
+        </extendedCases>
+      </useCase>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <artifact
@@ -9089,14 +9109,469 @@
     <packageHasNamedElement>
       <actor
         Id="ce8c8ca7-3bfc-4b4b-a5d2-083b022f3176"
-        name="User"
+        name="Registered User"
         isAbstract="false"
-        isLeaf="false" />
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="1ab4222a-08ee-45b5-83ec-250838e692a4"
+            isDerived="false"
+            sourceEndRoleName="Registered User"
+            targetEndRoleName="Admin Login"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="7032d763-7984-4cc6-aa2c-58d504771a48"
+              LastKnownName="Admin Login"
+              LastKnownLocation="BugTrackerModeling.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="808ffe17-d738-419e-be91-e825d8e1614f"
+                  name="Registered User"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="c0837d42-1b1a-4265-b527-1dc0facf8c46"
+                  name="Admin Login"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="6ea5d7ce-f85e-4324-99f2-17fabbbde343"
+            isDerived="false"
+            sourceEndRoleName="Registered User"
+            targetEndRoleName="User Login"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="2714e3e9-59ee-4e36-8aaa-4392081bd6c3"
+              LastKnownName="User Login"
+              LastKnownLocation="BugTrackerModeling.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="49b727dc-db0d-404b-baa2-089fd57613e1"
+                  name="Registered User"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="f41cee08-8f4c-4d97-a1d1-871b7745294e"
+                  name="User Login"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <actor
         Id="565c72a7-82a3-4898-a318-d90e58333311"
         name="Admin"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="4bbe0823-3019-4846-be67-b68ff40b5c1f"
+        name="Public User"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="cc93651e-ee22-41a9-8cdc-346ec360b256"
+            isDerived="false"
+            sourceEndRoleName="Public User"
+            targetEndRoleName="Login"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="28bf5f34-9aee-45b6-ad5c-732810dbc1ad"
+              LastKnownName="Login"
+              LastKnownLocation="BugTrackerModeling.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="4d0d1768-7b70-48ad-ac07-4d5e8e18d994"
+                  name="Public User"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="6ca48962-a898-4ca7-ab8f-7efbbce4dc04"
+                  name="Login"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="2714e3e9-59ee-4e36-8aaa-4392081bd6c3"
+        name="User Login"
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="2d1ab1a9-49c1-45af-b2a7-47f957fad1b1">
+            <useCaseMoniker
+              Id="28bf5f34-9aee-45b6-ad5c-732810dbc1ad"
+              LastKnownName="Login"
+              LastKnownLocation="BugTrackerModeling.uml" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="c2d3c311-8eca-467e-a907-03baf67b3b20"
+        name="Manage Users"
+        isAbstract="false"
+        isLeaf="false">
+        <additions>
+          <include
+            Id="04df2a05-99c7-4b63-b38b-8abde3cb2be3">
+            <useCaseMoniker
+              Id="7032d763-7984-4cc6-aa2c-58d504771a48"
+              LastKnownName="Admin Login"
+              LastKnownLocation="BugTrackerModeling.uml" />
+          </include>
+        </additions>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="12fff054-48fb-4012-83be-cb01777862d2"
+        name="List Bug"
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="bb1a11f1-7a83-410f-b459-5731bc66f6b2">
+            <useCaseMoniker
+              Id="28bf5f34-9aee-45b6-ad5c-732810dbc1ad"
+              LastKnownName="Login"
+              LastKnownLocation="BugTrackerModeling.uml" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="4e5cc76c-9c30-4b95-901f-e6d85ad165b8"
+        name="Add Solution"
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="9ed61ee1-d1ce-4190-952b-7126842f1b34">
+            <useCaseMoniker
+              Id="ba3dd905-b2e7-4f34-834b-50e441f8a8ec"
+              LastKnownName="Manage Bug"
+              LastKnownLocation="BugTrackerModeling.uml" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="520a9745-53ea-41ff-8c81-044120077ca3"
+        name="change password"
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="93736e7c-f1a8-47f2-b6a8-8b50adfe9f2b">
+            <useCaseMoniker
+              Id="28bf5f34-9aee-45b6-ad5c-732810dbc1ad"
+              LastKnownName="Login"
+              LastKnownLocation="BugTrackerModeling.uml" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="121f60bb-1493-48a4-a3d8-0765c633e729"
+        name="Edit profile"
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="848e628a-ca92-4970-b768-ceb1637ba1af">
+            <useCaseMoniker
+              Id="28bf5f34-9aee-45b6-ad5c-732810dbc1ad"
+              LastKnownName="Login"
+              LastKnownLocation="BugTrackerModeling.uml" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="1fa9d740-5fbb-445b-9337-f9e3ab8e1b5d"
+        name="Logout"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="d5769a17-2dd2-42c2-8bcd-4b8db2c6a939"
+        name="Manage Project"
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="f845ccd7-78c0-4a16-99a0-2e2cbc0390c0">
+            <useCaseMoniker
+              Id="7032d763-7984-4cc6-aa2c-58d504771a48"
+              LastKnownName="Admin Login"
+              LastKnownLocation="BugTrackerModeling.uml" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="1ba761c9-bbf8-427b-bc0b-5ddf6a273306"
+        name="Logout"
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="f0204ea4-c4c3-4d83-9462-41a08dfd2c95">
+            <useCaseMoniker
+              Id="28bf5f34-9aee-45b6-ad5c-732810dbc1ad"
+              LastKnownName="Login"
+              LastKnownLocation="BugTrackerModeling.uml" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="fd5be25d-f480-4588-bb69-437b4f5ee9e5"
+        name="Activate / deactivate user"
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="4fa9aa0e-83a6-4590-90a8-48f23ecad369">
+            <useCaseMoniker
+              Id="c2d3c311-8eca-467e-a907-03baf67b3b20"
+              LastKnownName="Manage Users"
+              LastKnownLocation="BugTrackerModeling.uml" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="32494561-8637-441a-a74e-10a65829e70d"
+        name="Delete User"
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="7c5b6e22-9bd6-4f26-ae6e-810ec3769440">
+            <useCaseMoniker
+              Id="c2d3c311-8eca-467e-a907-03baf67b3b20"
+              LastKnownName="Manage Users"
+              LastKnownLocation="BugTrackerModeling.uml" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="265d1c4c-7f6e-4ffe-ba67-8850bb8c81b7"
+        name="Add Bug"
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="a3c99f3d-2f86-4d07-8354-47676ad09305">
+            <useCaseMoniker
+              Id="12fff054-48fb-4012-83be-cb01777862d2"
+              LastKnownName="List Bug"
+              LastKnownLocation="BugTrackerModeling.uml" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="11ff279e-92c5-449b-aeaf-d74cda0af000"
+        name="Actor1"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="ba3dd905-b2e7-4f34-834b-50e441f8a8ec"
+        name="Manage Bug"
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="d3bd46d3-86c2-40e4-9da7-8af38cf3676e">
+            <useCaseMoniker
+              Id="12fff054-48fb-4012-83be-cb01777862d2"
+              LastKnownName="List Bug"
+              LastKnownLocation="BugTrackerModeling.uml" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="be755b70-47db-4eb7-bcda-a474dc506011"
+        name="Actor2"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="95beee24-cd8f-4ad2-a88e-b27eeb1d19d9"
+        name="List Solution"
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="6059ec98-429b-4cd1-a678-7d8aee4ccb5a">
+            <useCaseMoniker
+              Id="ba3dd905-b2e7-4f34-834b-50e441f8a8ec"
+              LastKnownName="Manage Bug"
+              LastKnownLocation="BugTrackerModeling.uml" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="8e093743-dc7a-4568-b394-f6c1c3d0ba29"
+        name="Manage Own solution"
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="aa7f70d2-1677-4602-bc23-51cd3f9a4457">
+            <useCaseMoniker
+              Id="95beee24-cd8f-4ad2-a88e-b27eeb1d19d9"
+              LastKnownName="List Solution"
+              LastKnownLocation="BugTrackerModeling.uml" />
+          </extend>
+        </extendedCases>
+        <additions>
+          <include
+            Id="93171e0b-3720-4f91-b4df-112036c76f23">
+            <useCaseMoniker
+              Id="f113b63a-2bc6-4b59-addd-29d06c2d8864"
+              LastKnownName="Authenticate Author"
+              LastKnownLocation="BugTrackerModeling.uml" />
+          </include>
+        </additions>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="f113b63a-2bc6-4b59-addd-29d06c2d8864"
+        name="Authenticate Author"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="3b88c987-f72c-4960-b6b2-e27911a78fa5"
+        name="Add / edit"
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="eddd2955-3bb0-4b6d-8f4a-baa4d4071260">
+            <useCaseMoniker
+              Id="d5769a17-2dd2-42c2-8bcd-4b8db2c6a939"
+              LastKnownName="Manage Project"
+              LastKnownLocation="BugTrackerModeling.uml" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="0bcbe279-2aa0-43fd-bd79-d468cfd8221b"
+        name="Edit Bug"
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="0829ead3-0f5a-473f-9bd3-56968c9027e5">
+            <useCaseMoniker
+              Id="ba3dd905-b2e7-4f34-834b-50e441f8a8ec"
+              LastKnownName="Manage Bug"
+              LastKnownLocation="BugTrackerModeling.uml" />
+          </extend>
+        </extendedCases>
+        <additions>
+          <include
+            Id="b552a095-ee5e-4bd6-9895-9661d54b681e">
+            <useCaseMoniker
+              Id="b337c407-de70-4586-909c-522d960f4afc"
+              LastKnownName="Authenticate bug author"
+              LastKnownLocation="BugTrackerModeling.uml" />
+          </include>
+        </additions>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="b337c407-de70-4586-909c-522d960f4afc"
+        name="Authenticate bug author"
         isAbstract="false"
         isLeaf="false" />
     </packageHasNamedElement>

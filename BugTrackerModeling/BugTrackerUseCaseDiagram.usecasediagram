@@ -6,48 +6,310 @@
       <body>Note : User can be Developer or Tester</body>
     </comment>
   </ownedCommentsInternal>
-  <profileInstances>
-    <packageHasProfileInstances Id="e08cb74a-2e14-4437-b198-501cdf7d594a">
-      <profileInstance Id="6035f87e-58d7-4970-a328-b3ccdc1c430d" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="7a3c0a5a-ad9b-4c50-aa5a-b4ea88f2ceab">
-      <profileInstance Id="10d3221e-bc51-4c10-9b98-eb69c3c840ad" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-  </profileInstances>
   <packagedElements>
     <useCaseModelRootHasTypes>
-      <useCase Id="3026606e-9f4d-4642-b53f-8911b35e8221" name="UseCase1" isAbstract="false" isLeaf="false">
+      <useCase Id="3026606e-9f4d-4642-b53f-8911b35e8221" name="Login" isAbstract="false" isLeaf="false">
         <elementDefinition Id="28bf5f34-9aee-45b6-ad5c-732810dbc1ad" />
+        <additions>
+          <include Id="ef749170-9a50-464e-bfcb-1e3450713d4d">
+            <useCaseMoniker Id="bbb429bd-4c07-4fb6-b298-0561d8c33114" LastKnownName="Register" />
+            <elementDefinition Id="34a5a6d9-49e8-4b5a-8709-8a456d3a5733" />
+          </include>
+        </additions>
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <useCase Id="bbb429bd-4c07-4fb6-b298-0561d8c33114" name="UseCase2" isAbstract="false" isLeaf="false">
+      <useCase Id="bbb429bd-4c07-4fb6-b298-0561d8c33114" name="Register" isAbstract="false" isLeaf="false">
         <elementDefinition Id="bf616924-042c-41f4-8bfe-7481879039b5" />
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <useCase Id="8b1baba1-0682-4758-a88d-3b20a8edbfff" name="UseCase3" isAbstract="false" isLeaf="false">
+      <useCase Id="8b1baba1-0682-4758-a88d-3b20a8edbfff" name="Admin Login" isAbstract="false" isLeaf="false">
         <elementDefinition Id="7032d763-7984-4cc6-aa2c-58d504771a48" />
+        <extendedCases>
+          <extend Id="4c9d916b-090e-4f24-a7d3-a4f38fcb3068">
+            <useCaseMoniker Id="3026606e-9f4d-4642-b53f-8911b35e8221" LastKnownName="Login" />
+            <elementDefinition Id="598c8b9a-bb70-4f16-aa84-17a62d5ae814" />
+          </extend>
+        </extendedCases>
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <actor Id="4a69df37-7102-4795-9e58-b766ed5e6e3d" name="User" isAbstract="false" isLeaf="false">
+      <actor Id="4a69df37-7102-4795-9e58-b766ed5e6e3d" name="Registered User" isAbstract="false" isLeaf="false">
         <elementDefinition Id="ce8c8ca7-3bfc-4b4b-a5d2-083b022f3176" />
+        <targetEnds>
+          <association Id="4bbc159d-ea5f-47b8-b799-709afe581cb1" isDerived="false" sourceEndRoleName="Registered User" targetEndRoleName="Admin Login" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="8b1baba1-0682-4758-a88d-3b20a8edbfff" LastKnownName="Admin Login" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7265b155-6ab0-41cb-9169-b1f33648351b" name="Registered User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="808ffe17-d738-419e-be91-e825d8e1614f" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f1494e5c-d791-4959-8d0e-ead9b4b79238" name="Admin Login" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="c0837d42-1b1a-4265-b527-1dc0facf8c46" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="1ab4222a-08ee-45b5-83ec-250838e692a4" />
+          </association>
+          <association Id="e964aeff-8ead-407d-9bf0-4cd87f842b19" isDerived="false" sourceEndRoleName="Registered User" targetEndRoleName="User Login" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="80293333-46bd-4574-afe1-a98756f0da2a" LastKnownName="User Login" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b836173f-ff07-4cce-98fd-2e8c8fa08b36" name="Registered User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="49b727dc-db0d-404b-baa2-089fd57613e1" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="37721c3e-4adf-4599-af8c-ff3298b90a0a" name="User Login" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="f41cee08-8f4c-4d97-a1d1-871b7745294e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="6ea5d7ce-f85e-4324-99f2-17fabbbde343" />
+          </association>
+        </targetEnds>
       </actor>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <actor Id="17f5e5fa-dbef-49f3-8434-5f96e3de3874" name="Admin" isAbstract="false" isLeaf="false">
-        <elementDefinition Id="565c72a7-82a3-4898-a318-d90e58333311" />
+      <actor Id="69947e37-c1f7-48c3-bf45-6ffcca7277db" name="Public User" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="4bbe0823-3019-4846-be67-b68ff40b5c1f" />
+        <targetEnds>
+          <association Id="d4da3520-1898-4934-9c49-1885cd472bc6" isDerived="false" sourceEndRoleName="Public User" targetEndRoleName="Login" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="3026606e-9f4d-4642-b53f-8911b35e8221" LastKnownName="Login" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7e088407-fb13-431b-a863-bdaa67612a97" name="Public User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="4d0d1768-7b70-48ad-ac07-4d5e8e18d994" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="32e49230-d7d7-428e-82d4-c121680ddb82" name="Login" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="6ca48962-a898-4ca7-ab8f-7efbbce4dc04" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="cc93651e-ee22-41a9-8cdc-346ec360b256" />
+          </association>
+        </targetEnds>
       </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="80293333-46bd-4574-afe1-a98756f0da2a" name="User Login" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="2714e3e9-59ee-4e36-8aaa-4392081bd6c3" />
+        <extendedCases>
+          <extend Id="7c012d41-d2bd-48b9-a5f0-99ce67c919b3">
+            <useCaseMoniker Id="3026606e-9f4d-4642-b53f-8911b35e8221" LastKnownName="Login" />
+            <elementDefinition Id="2d1ab1a9-49c1-45af-b2a7-47f957fad1b1" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="b5dc4d10-b139-4830-bca2-998ed6e19213" name="Manage Users" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="c2d3c311-8eca-467e-a907-03baf67b3b20" />
+        <additions>
+          <include Id="a4d040ba-c4a2-428f-8400-fe7753e14891">
+            <useCaseMoniker Id="8b1baba1-0682-4758-a88d-3b20a8edbfff" LastKnownName="Admin Login" />
+            <elementDefinition Id="04df2a05-99c7-4b63-b38b-8abde3cb2be3" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="b448eeb3-4672-4b43-9125-f156192ab30f" name="List Bug" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="12fff054-48fb-4012-83be-cb01777862d2" />
+        <extendedCases>
+          <extend Id="2a5ddbe3-e72c-46fb-a974-75d464a8c408">
+            <useCaseMoniker Id="3026606e-9f4d-4642-b53f-8911b35e8221" LastKnownName="Login" />
+            <elementDefinition Id="bb1a11f1-7a83-410f-b459-5731bc66f6b2" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="ea4a4e7c-db6e-49c6-b11a-1ae58fd68699" name="Add Solution" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="4e5cc76c-9c30-4b95-901f-e6d85ad165b8" />
+        <extendedCases>
+          <extend Id="5c56a120-3944-4819-ac60-ce08f694b662">
+            <useCaseMoniker Id="f7f4c538-49d7-4214-8ef1-021374caa3ee" LastKnownName="Manage Bug" />
+            <elementDefinition Id="9ed61ee1-d1ce-4190-952b-7126842f1b34" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="dcb696e1-a34b-416c-8d87-e4c2e604f486" name="change password" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="520a9745-53ea-41ff-8c81-044120077ca3" />
+        <extendedCases>
+          <extend Id="b4324151-2f6a-4736-8e74-7d230b2c28d2">
+            <useCaseMoniker Id="3026606e-9f4d-4642-b53f-8911b35e8221" LastKnownName="Login" />
+            <elementDefinition Id="93736e7c-f1a8-47f2-b6a8-8b50adfe9f2b" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="ff0c82f8-0f29-4acd-baa2-8ad218c6fe20" name="Edit profile" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="121f60bb-1493-48a4-a3d8-0765c633e729" />
+        <extendedCases>
+          <extend Id="c898909d-aebf-441c-a047-6bb8071cb6e1">
+            <useCaseMoniker Id="3026606e-9f4d-4642-b53f-8911b35e8221" LastKnownName="Login" />
+            <elementDefinition Id="848e628a-ca92-4970-b768-ceb1637ba1af" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="e4feb6ad-3295-4c40-bcc6-decaff2fdf9c" name="Manage Project" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="d5769a17-2dd2-42c2-8bcd-4b8db2c6a939" />
+        <extendedCases>
+          <extend Id="a668ebbf-4399-4114-93b5-146f46d6870b">
+            <useCaseMoniker Id="8b1baba1-0682-4758-a88d-3b20a8edbfff" LastKnownName="Admin Login" />
+            <elementDefinition Id="f845ccd7-78c0-4a16-99a0-2e2cbc0390c0" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="5b3ee1c3-6525-4b46-aa67-4e05293d79a2" name="Logout" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="1ba761c9-bbf8-427b-bc0b-5ddf6a273306" />
+        <extendedCases>
+          <extend Id="73cc12dc-20e0-4f41-8046-9f7e259cc40b">
+            <useCaseMoniker Id="3026606e-9f4d-4642-b53f-8911b35e8221" LastKnownName="Login" />
+            <elementDefinition Id="f0204ea4-c4c3-4d83-9462-41a08dfd2c95" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="9bfa2a90-c6e5-49c9-b66f-0f08936067c8" name="Activate / deactivate user" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="fd5be25d-f480-4588-bb69-437b4f5ee9e5" />
+        <extendedCases>
+          <extend Id="05f04db6-f14d-4cd8-b8bb-28ae80fd1e89">
+            <useCaseMoniker Id="b5dc4d10-b139-4830-bca2-998ed6e19213" LastKnownName="Manage Users" />
+            <elementDefinition Id="4fa9aa0e-83a6-4590-90a8-48f23ecad369" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="60f71c8d-e9d7-47b0-8097-34143c31e17d" name="Delete User" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="32494561-8637-441a-a74e-10a65829e70d" />
+        <extendedCases>
+          <extend Id="28c98414-f85d-4824-ad65-6eb1c0b0891d">
+            <useCaseMoniker Id="b5dc4d10-b139-4830-bca2-998ed6e19213" LastKnownName="Manage Users" />
+            <elementDefinition Id="7c5b6e22-9bd6-4f26-ae6e-810ec3769440" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="74d20639-afca-4838-b6f7-128988251e29" name="Add Bug" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="265d1c4c-7f6e-4ffe-ba67-8850bb8c81b7" />
+        <extendedCases>
+          <extend Id="79ddb685-6c5d-4d81-af25-5523a8de91d6">
+            <useCaseMoniker Id="b448eeb3-4672-4b43-9125-f156192ab30f" LastKnownName="List Bug" />
+            <elementDefinition Id="a3c99f3d-2f86-4d07-8354-47676ad09305" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="f7f4c538-49d7-4214-8ef1-021374caa3ee" name="Manage Bug" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="ba3dd905-b2e7-4f34-834b-50e441f8a8ec" />
+        <extendedCases>
+          <extend Id="e1a694cb-49d4-43e8-87af-9b0e2fa8308e">
+            <useCaseMoniker Id="b448eeb3-4672-4b43-9125-f156192ab30f" LastKnownName="List Bug" />
+            <elementDefinition Id="d3bd46d3-86c2-40e4-9da7-8af38cf3676e" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="45d05781-8fd6-45d9-a6fb-6aab9669e074" name="List Solution" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="95beee24-cd8f-4ad2-a88e-b27eeb1d19d9" />
+        <extendedCases>
+          <extend Id="c7250a45-3b21-4cd1-b8eb-3a888af2d6f7">
+            <useCaseMoniker Id="f7f4c538-49d7-4214-8ef1-021374caa3ee" LastKnownName="Manage Bug" />
+            <elementDefinition Id="6059ec98-429b-4cd1-a678-7d8aee4ccb5a" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="c3b2112b-b495-4d57-8239-025e802e4d06" name="Manage Own solution" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="8e093743-dc7a-4568-b394-f6c1c3d0ba29" />
+        <extendedCases>
+          <extend Id="12752878-77bc-4c46-814f-47f916229a92">
+            <useCaseMoniker Id="45d05781-8fd6-45d9-a6fb-6aab9669e074" LastKnownName="List Solution" />
+            <elementDefinition Id="aa7f70d2-1677-4602-bc23-51cd3f9a4457" />
+          </extend>
+        </extendedCases>
+        <additions>
+          <include Id="4115f7d6-65d5-44c0-b027-a5bc9fae56c9">
+            <useCaseMoniker Id="b3e93242-a8c0-4c9f-a6e4-03d200692deb" LastKnownName="Authenticate Author" />
+            <elementDefinition Id="93171e0b-3720-4f91-b4df-112036c76f23" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="b3e93242-a8c0-4c9f-a6e4-03d200692deb" name="Authenticate Author" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="f113b63a-2bc6-4b59-addd-29d06c2d8864" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="5f568f44-8542-45ed-8812-0c6b1e697a57" name="Add / edit" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="3b88c987-f72c-4960-b6b2-e27911a78fa5" />
+        <extendedCases>
+          <extend Id="a1e2b3fa-b024-4693-8051-f7ecb094b14f">
+            <useCaseMoniker Id="e4feb6ad-3295-4c40-bcc6-decaff2fdf9c" LastKnownName="Manage Project" />
+            <elementDefinition Id="eddd2955-3bb0-4b6d-8f4a-baa4d4071260" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="f6cc0532-4e9b-41d7-8623-da4a13cf48a3" name="Edit Bug" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="0bcbe279-2aa0-43fd-bd79-d468cfd8221b" />
+        <extendedCases>
+          <extend Id="075241a8-4da2-4535-9b3f-dda8433c3d12">
+            <useCaseMoniker Id="f7f4c538-49d7-4214-8ef1-021374caa3ee" LastKnownName="Manage Bug" />
+            <elementDefinition Id="0829ead3-0f5a-473f-9bd3-56968c9027e5" />
+          </extend>
+        </extendedCases>
+        <additions>
+          <include Id="8a1d4d31-9122-4de4-a057-7d8a4a59e42a">
+            <useCaseMoniker Id="2ab0e675-09b2-4f8a-9878-cb0a501ae954" LastKnownName="Authenticate bug author" />
+            <elementDefinition Id="b552a095-ee5e-4bd6-9895-9661d54b681e" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="2ab0e675-09b2-4f8a-9878-cb0a501ae954" name="Authenticate bug author" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="b337c407-de70-4586-909c-522d960f4afc" />
+      </useCase>
     </useCaseModelRootHasTypes>
   </packagedElements>
   <package Id="3d7a996d-6909-48ec-a6e8-ea3058350a28" name="BugTrackerModeling">
     <elementDefinition Id="68588eab-d7b7-4aa4-aa9f-550f19889830" />
+    <profileInstances>
+      <packageHasProfileInstances Id="e08cb74a-2e14-4437-b198-501cdf7d594a">
+        <profileInstance Id="6035f87e-58d7-4970-a328-b3ccdc1c430d" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="7a3c0a5a-ad9b-4c50-aa5a-b4ea88f2ceab">
+        <profileInstance Id="10d3221e-bc51-4c10-9b98-eb69c3c840ad" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </useCaseModelRoot>
