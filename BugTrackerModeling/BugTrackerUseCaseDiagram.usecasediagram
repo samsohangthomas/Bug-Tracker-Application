@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="0700f5a7-68e6-4b9b-a8d6-9c4a94b36d18" name="BugTrackerUseCaseDiagram" linkedPackageId="3d7a996d-6909-48ec-a6e8-ea3058350a28" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <ownedCommentsInternal>
+    <comment Id="4098b916-c7cc-4fb2-bf49-4e7eb8c68d39">
+      <elementDefinition Id="ce56e893-79ec-4003-903d-2147e5ec4c9e" />
+      <body>Note : User can be Developer or Tester</body>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances Id="e08cb74a-2e14-4437-b198-501cdf7d594a">
+      <profileInstance Id="6035f87e-58d7-4970-a328-b3ccdc1c430d" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="7a3c0a5a-ad9b-4c50-aa5a-b4ea88f2ceab">
+      <profileInstance Id="10d3221e-bc51-4c10-9b98-eb69c3c840ad" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <useCase Id="3026606e-9f4d-4642-b53f-8911b35e8221" name="UseCase1" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="28bf5f34-9aee-45b6-ad5c-732810dbc1ad" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="bbb429bd-4c07-4fb6-b298-0561d8c33114" name="UseCase2" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="bf616924-042c-41f4-8bfe-7481879039b5" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="8b1baba1-0682-4758-a88d-3b20a8edbfff" name="UseCase3" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="7032d763-7984-4cc6-aa2c-58d504771a48" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="4a69df37-7102-4795-9e58-b766ed5e6e3d" name="User" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="ce8c8ca7-3bfc-4b4b-a5d2-083b022f3176" />
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="17f5e5fa-dbef-49f3-8434-5f96e3de3874" name="Admin" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="565c72a7-82a3-4898-a318-d90e58333311" />
+      </actor>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="3d7a996d-6909-48ec-a6e8-ea3058350a28" name="BugTrackerModeling">
+    <elementDefinition Id="68588eab-d7b7-4aa4-aa9f-550f19889830" />
+  </package>
+</useCaseModelRoot>

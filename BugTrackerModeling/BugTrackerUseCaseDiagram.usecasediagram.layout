@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="BugTrackerUseCaseDiagram">
+  <useCaseModelRootMoniker Id="0700f5a7-68e6-4b9b-a8d6-9c4a94b36d18" />
+  <nestedChildShapes>
+    <useCaseShape Id="e5dd574b-b4fd-4069-aea0-2b55336af688" absoluteBounds="3.125, 5.125, 1, 0.5" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="3026606e-9f4d-4642-b53f-8911b35e8221" LastKnownName="UseCase1" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <useCaseShape Id="2d01a800-e480-42aa-a1a4-2ae5ded9df17" absoluteBounds="5, 5.25, 1, 0.5" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="bbb429bd-4c07-4fb6-b298-0561d8c33114" LastKnownName="UseCase2" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <useCaseShape Id="aa3a22e8-23ab-468f-b95c-21e652a7319d" absoluteBounds="6.375, 5, 1, 0.5" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="8b1baba1-0682-4758-a88d-3b20a8edbfff" LastKnownName="UseCase3" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <commentShape Id="d89cb6dc-b784-4edc-a127-b333dd84e84a" absoluteBounds="1.625, 0.75, 2.375, 0.375" customColor="251, 247, 200">
+      <commentMoniker Id="4098b916-c7cc-4fb2-bf49-4e7eb8c68d39" />
+      <relativeChildShapes />
+    </commentShape>
+    <actorShape Id="f7c245b7-67fd-41e7-9497-643e5a5f3077" absoluteBounds="2.75, 1.5, 0.5, 0.5" isReference="false" heightOffset="0">
+      <actorMoniker Id="4a69df37-7102-4795-9e58-b766ed5e6e3d" LastKnownName="User" />
+      <relativeChildShapes />
+    </actorShape>
+    <actorShape Id="500d7973-6836-4875-a1fa-ea3e4a2b2202" absoluteBounds="6, 1.5, 0.5, 0.5" isReference="false" heightOffset="0">
+      <actorMoniker Id="17f5e5fa-dbef-49f3-8434-5f96e3de3874" LastKnownName="Admin" />
+      <relativeChildShapes />
+    </actorShape>
+  </nestedChildShapes>
+</useCaseDiagram>

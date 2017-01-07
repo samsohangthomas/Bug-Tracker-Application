@@ -1,0 +1,10 @@
+C:\Users\solutionone\documents\visual studio 2015\Projects\bugtracker\BugTrackerTesting\bin\Debug\BugTrackerTesting.dll
+C:\Users\solutionone\documents\visual studio 2015\Projects\bugtracker\BugTrackerTesting\bin\Debug\BugTrackerTesting.pdb
+C:\Users\solutionone\documents\visual studio 2015\Projects\bugtracker\BugTrackerTesting\bin\Debug\bugtracker.exe
+C:\Users\solutionone\documents\visual studio 2015\Projects\bugtracker\BugTrackerTesting\bin\Debug\MetroFramework.dll
+C:\Users\solutionone\documents\visual studio 2015\Projects\bugtracker\BugTrackerTesting\bin\Debug\FastColoredTextBox.dll
+C:\Users\solutionone\documents\visual studio 2015\Projects\bugtracker\BugTrackerTesting\bin\Debug\bugtracker.pdb
+C:\Users\solutionone\documents\visual studio 2015\Projects\bugtracker\BugTrackerTesting\bin\Debug\FastColoredTextBox.xml
+C:\Users\solutionone\documents\visual studio 2015\Projects\bugtracker\BugTrackerTesting\obj\Debug\BugTrackerTesting.csprojResolveAssemblyReference.cache
+C:\Users\solutionone\documents\visual studio 2015\Projects\bugtracker\BugTrackerTesting\obj\Debug\BugTrackerTesting.dll
+C:\Users\solutionone\documents\visual studio 2015\Projects\bugtracker\BugTrackerTesting\obj\Debug\BugTrackerTesting.pdb
